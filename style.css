@@ -1,0 +1,971 @@
+
+/* =========================
+   1. Global styles
+========================= */
+
+:root {
+    --green: #07834f;
+    --green-dark: #075d3c;
+    --green-light: #e8f5ed;
+    --cream: #faf8f2;
+    --white: #ffffff;
+    --text: #142b3d;
+    --muted: #667586;
+    --border: #e6e5de;
+    --radius: 12px;
+    --shadow: 0 4px 18px rgba(25, 45, 35, 0.06);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.5;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button,
+select {
+    cursor: pointer;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+section {
+    scroll-margin-top: 90px;
+}
+
+.green-text {
+    color: var(--green);
+}
+
+.eyebrow {
+    display: block;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin-bottom: 7px;
+}
+
+/* =========================
+   2. Navigation bar
+========================= */
+
+.navbar {
+    height: 72px;
+    padding: 0 5%;
+    background: rgba(255, 255, 255, 0.97);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    white-space: nowrap;
+}
+
+.logo > span:last-child {
+    color: var(--green);
+    margin-left: -7px;
+}
+
+.logo-icon {
+    color: var(--green-dark);
+    font-size: 25px;
+}
+
+.nav-links,
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a,
+.login {
+    font-size: 13px;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links .active,
+.login:hover {
+    color: var(--green);
+}
+
+.nav-links .active {
+    border-bottom: 2px solid var(--green);
+    padding-bottom: 7px;
+}
+
+.btn {
+    min-height: 40px;
+    padding: 10px 19px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    background: var(--green);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: var(--green-dark);
+}
+
+.btn-outline {
+    border: 1px solid #b6d9c6;
+    background: var(--white);
+    color: var(--green);
+    padding: 6px 14px;
+    min-height: 30px;
+}
+
+/* =========================
+   3. Hero section
+========================= */
+
+.hero {
+    min-height: 340px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-image: url(
+        "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=2000&q=85"
+    );
+    background-size: cover;
+    background-position: center 45%;
+    color: var(--white);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(7, 26, 25, 0.86) 0%,
+        rgba(7, 26, 25, 0.60) 48%,
+        rgba(7, 26, 25, 0.14) 100%
+    );
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 1500px;
+    margin: auto;
+    padding: 38px 5%;
+    position: relative;
+    z-index: 1;
+}
+
+.hero .eyebrow {
+    color: #b5f1ce;
+}
+
+.hero h1 {
+    max-width: 620px;
+    font-size: clamp(32px, 4vw, 51px);
+    line-height: 1.12;
+    letter-spacing: -1.6px;
+    margin-bottom: 14px;
+}
+
+.hero-content > p {
+    max-width: 470px;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+/* =========================
+   4. Search form
+========================= */
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    max-width: 1100px;
+    padding: 9px;
+    border-radius: 13px;
+    background: var(--white);
+    box-shadow: 0 8px 35px rgba(0, 0, 0, 0.15);
+}
+
+.search-field {
+    height: 43px;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 10px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    color: var(--muted);
+}
+
+.search-field > span {
+    font-size: 19px;
+}
+
+.search-field select,
+.search-field input {
+    width: 100%;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--text);
+    font-size: 12px;
+}
+
+.university-field {
+    flex: 1.15;
+}
+
+.keyword-field {
+    flex: 1.9;
+}
+
+.type-field {
+    flex: 0.85;
+}
+
+.date-field {
+    flex: 0.85;
+}
+
+.search-bar > .btn {
+    min-width: 100px;
+    height: 43px;
+}
+
+/* =========================
+   5. Page layout
+========================= */
+
+.page-container {
+    width: 90%;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.content-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(260px, 0.94fr);
+    gap: 27px;
+    padding-top: 30px;
+}
+
+.main-column {
+    min-width: 0;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 17px;
+}
+
+.section-heading h2 {
+    font-size: 23px;
+    letter-spacing: -0.6px;
+}
+
+.view-all {
+    color: var(--green-dark);
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.view-all:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   6. Event cards
+========================= */
+
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.event-card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.event-card:hover,
+.club-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(25, 45, 35, 0.11);
+}
+
+.event-image {
+    position: relative;
+    height: 145px;
+    background: #e5e9e2;
+}
+
+.event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.category {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px 8px;
+    border-radius: 5px;
+    color: white;
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.tech {
+    background: #086a4c;
+}
+
+.music {
+    background: #7041a0;
+}
+
+.academic {
+    background: #76634e;
+}
+
+.sports {
+    background: #438052;
+}
+
+.event-details {
+    padding: 12px;
+}
+
+.event-title-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    min-height: 51px;
+    margin-bottom: 8px;
+}
+
+.date-box,
+.mini-date {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #f5f3ed;
+    border-radius: 7px;
+    padding: 5px 9px;
+    line-height: 1.25;
+}
+
+.date-box span,
+.mini-date span {
+    font-size: 9px;
+    font-weight: 800;
+    color: var(--green-dark);
+}
+
+.date-box strong {
+    font-size: 19px;
+}
+
+.event-title-row h3 {
+    font-size: 13px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.event-meta {
+    color: var(--muted);
+    font-size: 10px;
+    margin: 6px 0;
+    overflow-wrap: anywhere;
+}
+
+.attendees {
+    color: var(--muted);
+    font-size: 10px;
+    margin-top: 11px;
+    margin-bottom: 12px;
+}
+
+.event-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.event-actions .btn {
+    flex: 1;
+    min-width: 0;
+    min-height: 34px;
+    padding: 7px;
+}
+
+.bookmark {
+    border: 0;
+    background: transparent;
+    color: var(--muted);
+    font-size: 25px;
+    line-height: 1;
+}
+
+/* =========================
+   7. Sidebar
+========================= */
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    min-width: 0;
+}
+
+.sidebar-card {
+    padding: 16px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--white);
+}
+
+.sidebar-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.sidebar-heading h2,
+.sidebar-card > h2 {
+    font-size: 17px;
+}
+
+.sidebar-heading a {
+    color: var(--green);
+    font-size: 10px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.upcoming-item {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 11px 0;
+    border-bottom: 1px solid #f0efe9;
+}
+
+.upcoming-item:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+.mini-date {
+    min-width: 43px;
+    padding: 7px 5px;
+}
+
+.mini-date strong {
+    font-size: 17px;
+}
+
+.upcoming-item h3 {
+    font-size: 11px;
+    line-height: 1.45;
+    margin-bottom: 4px;
+}
+
+.upcoming-item p {
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+/* =========================
+   8. M-Pesa panel
+========================= */
+
+.mpesa-card {
+    position: relative;
+    overflow: hidden;
+    min-height: 170px;
+    padding: 18px;
+    border: 1px solid #d2e6d4;
+    border-radius: 10px;
+    background: linear-gradient(120deg, #f1f9ee, #dcefe0);
+}
+
+.mpesa-brand {
+    color: #008b51;
+    font-size: 21px;
+    font-weight: 900;
+    margin-bottom: 12px;
+}
+
+.mpesa-mark {
+    color: #e33f35;
+}
+
+.mpesa-card h2 {
+    max-width: 210px;
+    font-size: 18px;
+    line-height: 1.3;
+    margin-bottom: 8px;
+}
+
+.mpesa-card p {
+    font-size: 11px;
+    margin-bottom: 13px;
+}
+
+.mpesa-card .btn {
+    position: relative;
+    z-index: 2;
+}
+
+.payment-symbol {
+    position: absolute;
+    right: -15px;
+    bottom: -30px;
+    width: 120px;
+    height: 145px;
+    border-radius: 20px;
+    border: 7px solid #17372c;
+    background: linear-gradient(145deg, #ffffff, #d8f4de);
+    color: var(--green);
+    font-size: 45px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-9deg);
+}
+
+/* =========================
+   9. Benefits
+========================= */
+
+.benefits {
+    background: #eff7ef;
+}
+
+.benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+    margin: 18px 0;
+    text-align: center;
+}
+
+.benefit-grid span {
+    display: block;
+    color: var(--green);
+    font-size: 23px;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+
+.benefit-grid p {
+    font-size: 9px;
+    line-height: 1.4;
+}
+
+.powered {
+    border-top: 1px solid #dce9db;
+    padding-top: 12px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+/* =========================
+   10. Campus clubs
+========================= */
+
+.club-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.club-card {
+    min-width: 0;
+    overflow: hidden;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.club-card > img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+}
+
+.club-info {
+    position: relative;
+    padding: 28px 12px 12px;
+}
+
+.club-icon {
+    position: absolute;
+    top: -23px;
+    left: 12px;
+    width: 43px;
+    height: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid white;
+    border-radius: 50%;
+    background: var(--green);
+    color: white;
+    font-size: 20px;
+}
+
+.club-icon.blue {
+    background: #287b99;
+}
+
+.club-icon.purple {
+    background: #8060a3;
+}
+
+.club-icon.green {
+    background: #188354;
+}
+
+.club-icon.orange {
+    background: #e77840;
+}
+
+.club-info h3 {
+    font-size: 12px;
+    line-height: 1.4;
+    margin-bottom: 4px;
+}
+
+.club-info > p {
+    color: var(--muted);
+    font-size: 10px;
+    min-height: 29px;
+}
+
+.club-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    margin-top: 9px;
+}
+
+.club-bottom > span {
+    color: var(--muted);
+    font-size: 9px;
+}
+
+/* =========================
+   11. University strip
+========================= */
+
+.universities {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 24px 0;
+    border-top: 1px solid var(--border);
+    margin-top: 10px;
+}
+
+.universities h2 {
+    font-size: 13px;
+}
+
+.universities span {
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* =========================
+   12. Footer
+========================= */
+
+.footer {
+    padding: 28px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    background: #f0eee6;
+    border-top: 1px solid var(--border);
+}
+
+.footer .logo {
+    font-size: 20px;
+}
+
+.footer p {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+/* =========================
+   13. Responsive design
+========================= */
+
+@media (max-width: 1200px) {
+    .navbar {
+        padding: 0 3%;
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .page-container {
+        width: 94%;
+    }
+
+    .content-layout {
+        grid-template-columns: minmax(0, 1fr) 270px;
+        gap: 18px;
+    }
+
+    .event-grid,
+    .club-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .event-image {
+        height: 170px;
+    }
+
+    .club-card > img {
+        height: 130px;
+    }
+}
+
+@media (max-width: 850px) {
+    .navbar {
+        height: auto;
+        min-height: 68px;
+        padding: 15px 4%;
+        flex-wrap: wrap;
+    }
+
+    .nav-links {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .nav-actions {
+        gap: 12px;
+    }
+
+    .content-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: start;
+    }
+
+    .search-bar {
+        flex-wrap: wrap;
+    }
+
+    .university-field,
+    .keyword-field {
+        flex: 1 1 45%;
+    }
+
+    .type-field,
+    .date-field {
+        flex: 1 1 25%;
+    }
+
+    .search-bar > .btn {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 550px) {
+    .navbar {
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .nav-links {
+        gap: 17px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .nav-actions .login {
+        display: none;
+    }
+
+    .nav-actions .btn {
+        min-height: 35px;
+        padding: 8px 12px;
+    }
+
+    .hero {
+        min-height: 440px;
+        background-position: center;
+    }
+
+    .hero-content {
+        padding: 35px 5%;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .hero-content > p {
+        font-size: 13px;
+    }
+
+    .search-bar {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .search-field {
+        width: 100%;
+    }
+
+    .search-field select,
+    .search-field input {
+        font-size: 12px;
+    }
+
+    .page-container {
+        width: 92%;
+    }
+
+    .content-layout {
+        padding-top: 25px;
+    }
+
+    .section-heading h2 {
+        font-size: 20px;
+    }
+
+    .event-grid,
+    .club-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .event-image {
+        height: 210px;
+    }
+
+    .club-card > img {
+        height: 160px;
+    }
+
+    .sidebar {
+        display: flex;
+    }
+
+    .universities {
+        justify-content: flex-start;
+    }
+
+    .universities h2 {
+        width: 100%;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
