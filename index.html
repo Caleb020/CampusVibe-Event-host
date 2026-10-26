@@ -1,0 +1,371 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover campus events, student clubs, workshops and festivals at Kenyan universities.">
+    <title>CampusLife - Discover Campus Experiences</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <a href="#" class="logo">
+            <span class="logo-icon">◆</span>
+            Campus<span>Life</span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="#home" class="active">Home</a>
+            <a href="#events">Events</a>
+            <a href="#clubs">Clubs</a>
+            <a href="#universities">Universities</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <div class="nav-actions">
+            <a href="#events" class="login">Log in</a>
+            <a href="#events" class="btn btn-primary">Sign up</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+                <span class="eyebrow">YOUR CAMPUS. YOUR COMMUNITY.</span>
+
+                <h1>Discover campus experiences, together.</h1>
+
+                <p>
+                    Find the best events, join student clubs, and make
+                    new connections at Kenyan universities.
+                </p>
+
+                <!-- Search Bar -->
+                <form class="search-bar">
+                    <label class="search-field university-field">
+                        <span>🏛</span>
+                        <select aria-label="Select university">
+                            <option>University of Nairobi</option>
+                            <option>Kenyatta University</option>
+                            <option>Strathmore University</option>
+                            <option>Daystar University</option>
+                            <option>Technical University of Kenya</option>
+                            <option>Moi University</option>
+                            <option>Jomo Kenyatta University of Agriculture and Technology</option>
+                            <option>Maseno University</option>
+                            <option>Mount Kenya University</option>
+                        </select>
+                    </label>
+
+                    <label class="search-field keyword-field">
+                        <span>⌕</span>
+                        <input type="search"
+                            placeholder="Search events, clubs, or workshops"
+                            aria-label="Search events and clubs">
+                    </label>
+
+                    <label class="search-field type-field">
+                        <select aria-label="Event category">
+                            <option>All Events</option>
+                            <option>Technology</option>
+                            <option>Music</option>
+                            <option>Academic</option>
+                            <option>Sports</option>
+                        </select>
+                    </label>
+
+                    <label class="search-field date-field">
+                        <span>▦</span>
+                        <select aria-label="Event date">
+                            <option>Any Date</option>
+                            <option>This Week</option>
+                            <option>This Month</option>
+                        </select>
+                    </label>
+
+                    <button type="button" class="btn btn-primary">
+                        Search
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <div class="page-container">
+
+            <div class="content-layout">
+                <div class="main-column">
+
+                    <!-- Featured Events -->
+                    <section class="section" id="events">
+                        <div class="section-heading">
+                            <div>
+                                <span class="eyebrow green-text">DON'T MISS OUT</span>
+                                <h2>Featured Events</h2>
+                            </div>
+                            <a href="#events" class="view-all">View all →</a>
+                        </div>
+
+                        <div class="event-grid">
+
+                            <article class="event-card">
+                                <div class="event-image">
+                                    <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=700&q=80"
+                                        alt="Students collaborating at a hackathon">
+                                    <span class="category tech">TECH & INNOVATION</span><br>
+                                </div>
+                                <div class="event-details">
+                                    <div class="event-title-row">
+                                        <div class="date-box">
+                                            <span>APR 26TH</span>
+                                        </div>
+                                        <h3>Inter-University Hackathon 2026</h3>
+                                    </div>
+                                    <p class="event-meta">VENUE: University of Nairobi</p>
+                                    <p class="event-meta">TIME: 9:00 AM – 5:00 PM</p>
+                                    <p class="attendees">ATTENDANCE: 320 attending</p>
+                                    <div class="event-actions">
+                                        <a href="#register" class="btn btn-primary">RSVP</a>
+                                        <button class="bookmark" aria-label="Save hackathon">♡</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="event-card">
+                                <div class="event-image">
+                                    <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=700&q=80"
+                                        alt="Live music concert with a crowd">
+                                    <span class="category music">MUSIC & ENTERTAINMENT</span><br>
+                                </div>
+                                <div class="event-details">
+                                    <div class="event-title-row">
+                                        <div class="date-box">
+                                            <span>APR 30TH</span>
+                                        </div>
+                                        <h3>Nairobi Campus Music Festival</h3>
+                                    </div>
+                                    <p class="event-meta">VENUE: University of Nairobi Grounds</p>
+                                    <p class="event-meta">TIME: 4:00 PM - 11:00 PM</p>
+                                    <p class="attendees">ATTENDANCE: 1.2k attending</p>
+                                    <div class="event-actions">
+                                        <a href="#register" class="btn btn-primary">RSVP</a>
+                                        <button class="bookmark" aria-label="Save music festival">♡</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="event-card">
+                                <div class="event-image">
+                                    <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=700&q=80"
+                                        alt="Students attending an academic workshop">
+                                    <span class="category academic">ACADEMIC</span>
+                                </div>
+                                <div class="event-details">
+                                    <div class="event-title-row">
+                                        <div class="date-box">
+                                            <span>MAY 30TH</span>
+                                        </div>
+                                        <h3>Data Science Workshop for Beginners</h3>
+                                    </div>
+                                    <p class="event-meta">VENUE: Strathmore University</p>
+                                    <p class="event-meta">TIME: 10:00 AM - 1:00 PM</p>
+                                    <p class="attendees">ATTENDANCE: 215 attending</p>
+                                    <div class="event-actions">
+                                        <a href="#register" class="btn btn-primary">RSVP</a>
+                                        <button class="bookmark" aria-label="Save workshop">♡</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="event-card">
+                                <div class="event-image">
+                                    <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=700&q=80"
+                                        alt="Football match on a sports field">
+                                    <span class="category sports">SPORTS</span>
+                                </div>
+                                <div class="event-details">
+                                    <div class="event-title-row">
+                                        <div class="date-box">
+                                            <span>MAY 10TH</span> 
+                                        </div>
+                                        <h3>Inter-Campus Football Tournament</h3>
+                                    </div>
+                                    <p class="event-meta">VENUE: Kenyatta University</p>
+                                    <p class="event-meta">TIME: 8:00 AM - 6:00 PM</p>
+                                    <p class="attendees">ATTENDANCE: 450 attending</p>
+                                    <div class="event-actions">
+                                        <a href="#register" class="btn btn-primary">RSVP</a>
+                                        <button class="bookmark" aria-label="Save football tournament">♡</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                        </div>
+                    </section>
+
+                    <!-- Campus Clubs -->
+                    <section class="section" id="clubs">
+                        <div class="section-heading">
+                            <div>
+                                <span class="eyebrow green-text">FIND YOUR PEOPLE</span>
+                                <h2>Popular Campus Clubs</h2>
+                            </div>
+                            <a href="#clubs" class="view-all">View all clubs →</a>
+                        </div>
+
+                        <div class="club-grid">
+
+                            <article class="club-card">
+                                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=500&q=80"
+                                    alt="Technology club members collaborating">
+                                <div class="club-info">
+                                    <div class="club-icon blue">⌘</div>
+                                    <h3>Computer Science Society</h3>
+                                    <p>University of Nairobi</p>
+                                    <div class="club-bottom">
+                                        <span>1.2k members</span>
+                                        <a href="#clubs" class="btn btn-outline">Join</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="club-card">
+                                <img src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=500&q=80"
+                                    alt="Film production camera and equipment">
+                                <div class="club-info">
+                                    <div class="club-icon purple">▶</div>
+                                    <h3>Kenya Film Club</h3>
+                                    <p>Daystar University</p>
+                                    <div class="club-bottom">
+                                        <span>856 members</span>
+                                        <a href="#clubs" class="btn btn-outline">Join</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="club-card">
+                                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=500&q=80"
+                                    alt="Green fields and sustainable agriculture">
+                                <div class="club-info">
+                                    <div class="club-icon green">♧</div>
+                                    <h3>Green Campus Initiative</h3>
+                                    <p>Kenyatta University</p>
+                                    <div class="club-bottom">
+                                        <span>642 members</span>
+                                        <a href="#clubs" class="btn btn-outline">Join</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="club-card">
+                                <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=500&q=80"
+                                    alt="Basketball court and basketball">
+                                <div class="club-info">
+                                    <div class="club-icon orange">◉</div>
+                                    <h3>Basketball Club</h3>
+                                    <p>Strathmore University</p>
+                                    <div class="club-bottom">
+                                        <span>890 members</span>
+                                        <a href="#clubs" class="btn btn-outline">Join</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                        </div>
+                    </section>
+
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+
+                    <section class="sidebar-card upcoming">
+                        <div class="sidebar-heading">
+                            <h2>Upcoming Events</h2>
+                            <a href="#events">View calendar →</a>
+                        </div>
+
+                        <a href="#events" class="upcoming-item">
+                            <div class="mini-date"><span>APR</span><strong>26</strong></div>
+                            <div>
+                                <h3>Inter-University Hackathon</h3>
+                                <p>University of Nairobi · 9:00 AM</p>
+                            </div>
+                        </a>
+
+                        <a href="#events" class="upcoming-item">
+                            <div class="mini-date"><span>APR</span><strong>30</strong></div>
+                            <div>
+                                <h3>Nairobi Campus Music Festival</h3>
+                                <p>UoN Grounds · 4:00 PM</p>
+                            </div>
+                        </a>
+
+                        <a href="#events" class="upcoming-item">
+                            <div class="mini-date"><span>MAY</span><strong>03</strong></div>
+                            <div>
+                                <h3>Data Science Workshop</h3>
+                                <p>Strathmore University · 10:00 AM</p>
+                            </div>
+                        </a>
+
+                        <a href="#events" class="upcoming-item">
+                            <div class="mini-date"><span>MAY</span><strong>10</strong></div>
+                            <div>
+                                <h3>Inter-Campus Football</h3>
+                                <p>Kenyatta University · 8:00 AM</p>
+                            </div>
+                        </a>
+                    </section>
+
+                    <!-- M-Pesa Panel -->
+                    <section class="mpesa-card">
+                        <div class="mpesa-brand">
+                            <span class="mpesa-mark">M</span>-PESA
+                        </div>
+                        <h2>Pay for events easily with M-Pesa</h2>
+                        <p>Fast. Secure. Convenient.</p>
+                        <a href="#about" class="btn btn-primary">Learn more →</a>
+                        <div class="payment-symbol">✓</div>
+                    </section>
+
+                    <!-- Benefits -->
+                    <section class="sidebar-card benefits" id="about">
+                        <h2>Why CampusVibe?</h2>
+                        <div class="benefit-grid">
+                            <div><span>✓</span><p>Verified<br>universities</p></div>
+                            <div><span>▣</span><p>Secure<br>payments</p></div>
+                            <div><span>▦</span><p>Easy<br>check-in</p></div>
+                            <div><span>♧</span><p>Real campus<br>community</p></div>
+                        </div>
+                        <p class="powered">Designed for campus communities in Kenya</p>
+                    </section>
+
+                </aside>
+            </div>
+
+            <!-- University Strip -->
+            <section class="universities" id="universities">
+                <h2>Universities</h2>
+                <span>University of Nairobi</span>
+                <span>Kenyatta University</span>
+                <span>Strathmore University</span>
+                <span>Daystar University</span>
+                <span>Technical University of Kenya</span>
+                <span>Moi University</span>
+                <span>Jomo Kenyatta University of Agriculture and Technology</span>
+                <span>Maseno University</span>
+                <span>Mount Kenya University</span>
+            </section>
+
+        </div>
+    </main>
+
+</body>
+</html>
